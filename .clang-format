@@ -1,166 +1,61 @@
----
-Language:        ObjC
-AccessModifierOffset: -1
-AlignAfterOpenBracket: Align
-AlignConsecutiveMacros: false
-AlignConsecutiveAssignments: false
-AlignConsecutiveDeclarations: false
-AlignEscapedNewlines: Left
-AlignOperands:   true
-AlignTrailingComments: true
-AllowAllArgumentsOnNextLine: true
-AllowAllConstructorInitializersOnNextLine: true
+# For options, see http://clang.llvm.org/docs/ClangFormatStyleOptions.html
+
+# A style complying with Google’s C++ style guide
+BasedOnStyle: Google
+
+# If true, horizontally aligns arguments after an open bracket.
+# This applies to round brackets (parentheses), angle brackets and square brackets.
+AlignAfterOpenBracket: true
+
+# If true, horizontally align operands of binary and ternary expressions.
+AlignOperands: false
+
+# Allow putting all parameters of a function declaration onto the next line even if BinPackParameters is false.
 AllowAllParametersOfDeclarationOnNextLine: true
-AllowShortBlocksOnASingleLine: Never
-AllowShortCaseLabelsOnASingleLine: false
-AllowShortFunctionsOnASingleLine: All
-AllowShortLambdasOnASingleLine: All
-AllowShortIfStatementsOnASingleLine: WithoutElse
-AllowShortLoopsOnASingleLine: true
-AlwaysBreakAfterDefinitionReturnType: None
-AlwaysBreakAfterReturnType: None
-AlwaysBreakBeforeMultilineStrings: true
-AlwaysBreakTemplateDeclarations: Yes
-BinPackArguments: true
-BinPackParameters: true
-BraceWrapping:
-  AfterCaseLabel:  false
-  AfterClass:      false
-  AfterControlStatement: false
-  AfterEnum:       false
-  AfterFunction:   false
-  AfterNamespace:  false
-  AfterObjCDeclaration: false
-  AfterStruct:     false
-  AfterUnion:      false
-  AfterExternBlock: false
-  BeforeCatch:     false
-  BeforeElse:      false
-  IndentBraces:    false
-  SplitEmptyFunction: true
-  SplitEmptyRecord: true
-  SplitEmptyNamespace: true
-BreakBeforeBinaryOperators: None
-BreakBeforeBraces: Attach
-BreakBeforeInheritanceComma: false
-BreakInheritanceList: BeforeColon
+
+# If true, always break after the template<...> of a template declaration.
+AlwaysBreakTemplateDeclarations: true
+
+# If false, a function call’s arguments will either be all on the same line or will have one line each.
+BinPackArguments: false
+
+# If false, a function call’s or function definition’s parameters will either all be on the same line or will have one line each.
+BinPackParameters: false
+
+# If true, ternary operators will be placed after line breaks.
 BreakBeforeTernaryOperators: true
-BreakConstructorInitializersBeforeComma: false
-BreakConstructorInitializers: BeforeColon
-BreakAfterJavaFieldAnnotations: false
-BreakStringLiterals: true
-ColumnLimit:     120
-CommentPragmas:  '^ IWYU pragma:'
-CompactNamespaces: false
-ConstructorInitializerAllOnOneLineOrOnePerLine: true
-ConstructorInitializerIndentWidth: 4
+
+# Column limit for Obj-C at Google is 100
+ColumnLimit: 100
+
+# Indent width for line continuations.
 ContinuationIndentWidth: 4
-Cpp11BracedListStyle: true
-DeriveLineEnding: true
-DerivePointerAlignment: true
-DisableFormat:   false
-ExperimentalAutoDetectBinPacking: false
-FixNamespaceComments: true
-ForEachMacros:
-  - foreach
-  - Q_FOREACH
-  - BOOST_FOREACH
-IncludeBlocks:   Regroup
-IncludeCategories:
-  - Regex:           '^<ext/.*\.h>'
-    Priority:        2
-    SortPriority:    0
-  - Regex:           '^<.*\.h>'
-    Priority:        1
-    SortPriority:    0
-  - Regex:           '^<.*'
-    Priority:        2
-    SortPriority:    0
-  - Regex:           '.*'
-    Priority:        3
-    SortPriority:    0
-IncludeIsMainRegex: '([-_](test|unittest))?$'
-IncludeIsMainSourceRegex: ''
-IndentCaseLabels: true
-IndentGotoLabels: true
-IndentPPDirectives: None
-IndentWidth:     4
-IndentWrappedFunctionNames: false
-JavaScriptQuotes: Leave
-JavaScriptWrapImports: true
-KeepEmptyLinesAtTheStartOfBlocks: false
-MacroBlockBegin: ''
-MacroBlockEnd:   ''
-MaxEmptyLinesToKeep: 1
-NamespaceIndentation: None
-ObjCBinPackProtocolList: Never
-ObjCBlockIndentWidth: 4
-ObjCSpaceAfterProperty: true
+
+# If true, analyze the formatted file for the most common alignment of & and *. PointerAlignment is then used only as fallback.
+DerivePointerAlignment: false
+
+# The number of characters to use for indentation of ObjC blocks.
+ObjCBlockIndentWidth: 2
+
+# Add a space after @property in Objective-C.
+# i.e. use \@property (readonly) instead of \@property(readonly).
+ObjCSpaceAfterProperty: false
+
+# Add a space in front of an Objective-C protocol list
+# i.e. use Foo <Protocol> instead of Foo<Protocol>.
 ObjCSpaceBeforeProtocolList: true
-PenaltyBreakAssignment: 2
-PenaltyBreakBeforeFirstCallParameter: 1
-PenaltyBreakComment: 300
-PenaltyBreakFirstLessLess: 120
-PenaltyBreakString: 1000
-PenaltyBreakTemplateDeclaration: 10
-PenaltyExcessCharacter: 1000000
-PenaltyReturnTypeOnItsOwnLine: 200
-PointerAlignment: Left
-RawStringFormats:
-  - Language:        Cpp
-    Delimiters:
-      - cc
-      - CC
-      - cpp
-      - Cpp
-      - CPP
-      - 'c++'
-      - 'C++'
-    CanonicalDelimiter: ''
-    BasedOnStyle:    google
-  - Language:        TextProto
-    Delimiters:
-      - pb
-      - PB
-      - proto
-      - PROTO
-    EnclosingFunctions:
-      - EqualsProto
-      - EquivToProto
-      - PARSE_PARTIAL_TEXT_PROTO
-      - PARSE_TEST_PROTO
-      - PARSE_TEXT_PROTO
-      - ParseTextOrDie
-      - ParseTextProtoOrDie
-    CanonicalDelimiter: ''
-    BasedOnStyle:    google
-ReflowComments:  true
-SortIncludes:    true
-SortUsingDeclarations: true
-SpaceAfterCStyleCast: false
-SpaceAfterLogicalNot: false
-SpaceAfterTemplateKeyword: true
-SpaceBeforeAssignmentOperators: true
-SpaceBeforeCpp11BracedList: false
-SpaceBeforeCtorInitializerColon: true
-SpaceBeforeInheritanceColon: true
-SpaceBeforeParens: ControlStatements
-SpaceBeforeRangeBasedForLoopColon: true
-SpaceInEmptyBlock: false
-SpaceInEmptyParentheses: false
-SpacesBeforeTrailingComments: 2
-SpacesInAngles:  false
-SpacesInConditionalStatement: false
+
+# Pointer and reference alignment style.
+# ie. Right means * and & align to the variable, not the type.
+# (PointerBindsToType looks like it's been deprecated and replaced by PointerAlignment)
+PointerBindsToType: false
+PointerAlignment: Right
+
+# If true, spaces are inserted inside container literals (e.g. ObjC array and dict literals).
 SpacesInContainerLiterals: true
-SpacesInCStyleCastParentheses: false
-SpacesInParentheses: false
-SpacesInSquareBrackets: false
-SpaceBeforeSquareBrackets: false
-Standard:        Auto
-StatementMacros:
-  - Q_UNUSED
-  - QT_REQUIRE_VERSION
-TabWidth:        4
-UseCRLF:         false
-UseTab:          Never
-...
+
+# The number of columns used for tab stops.
+TabWidth: 2
+
+# The way to use tab characters in the resulting file.
+UseTab: Never
