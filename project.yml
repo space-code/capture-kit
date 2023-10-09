@@ -3,7 +3,7 @@ options:
   developmentLanguage: en
   createIntermediateGroups: true
   deploymentTarget:
-    macOS: 13.0
+    macOS: 11
   xcodeVersion: 14.0
 settings:
   base:
@@ -35,7 +35,8 @@ targets:
     settings:
       base:
         MARKETING_VERSION: 1.0.0
-        CURRENT_PROJECT_VERSION: 1 
+        CURRENT_PROJECT_VERSION: 1
+        CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER: NO
   CaptureKitTests:
     type: bundle.unit-test
     platform: macOS
@@ -43,6 +44,10 @@ targets:
       - CaptureKitTests
     dependencies:
       - target: CaptureKit
+      - framework: ThirdParty/OCMock.xcframework
+    settings:
+      base:
+        CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER: NO
 aggregateTargets:
   OCLint:
     buildScripts:
