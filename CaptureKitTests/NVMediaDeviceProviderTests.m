@@ -18,6 +18,8 @@
 
 @implementation NVMediaDeviceProviderTests
 
+#pragma mark - Initialization
+
 - (void)setUp {
   [super setUp];
   _captureDevice = OCMClassMock([AVCaptureDevice class]);
@@ -29,6 +31,8 @@
   [_captureDevice stopMocking];
   [super tearDown];
 }
+
+#pragma mark - Tests
 
 - (void)testThatMediaDeviceProviderProvidesDevicesWithGivenMediaType {
   // given

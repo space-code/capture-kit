@@ -19,6 +19,8 @@ static NSString *const kDeviceID = @"device-id";
 
 @implementation NVAudioServiceTests
 
+#pragma mark - XCTestCase
+
 - (void)setUp {
   [super setUp];
   _mediaProvider = OCMProtocolMock(@protocol(NVIMediaProvider));
@@ -30,6 +32,8 @@ static NSString *const kDeviceID = @"device-id";
   _audioService = nil;
   [super tearDown];
 }
+
+#pragma mark - Tests
 
 - (void)testThatAudioServiceReturnsNilWhenAudioDeviceAreNil {
   // when

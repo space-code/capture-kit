@@ -1,9 +1,6 @@
 //
-//  NVCaptureConfigurationTests.m
-//  CaptureKitTests
-//
-//  Created by Никита Васильев on 10.10.2023.
-//  Copyright © 2023 space-code. All rights reserved.
+// CaptureKitTests
+// Copyright © 2023 Space Code. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
@@ -14,6 +11,8 @@
 @end
 
 @implementation NVCaptureConfigurationTests
+
+#pragma mark - Tests
 
 - (void)testThatConfigurationSetsUpDefaultValues {
   // when
