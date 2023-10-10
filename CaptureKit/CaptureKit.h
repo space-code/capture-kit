@@ -21,3 +21,4 @@ FOUNDATION_EXPORT const unsigned char CaptureKitVersionString[];
 #import <CaptureKit/NVCaptureQuality.h>
 #import <CaptureKit/NVCaptureService.h>
 #import <CaptureKit/NVCaptureServiceDelegate.h>
+#import <CaptureKit/NVMediaDeviceProvider.h>

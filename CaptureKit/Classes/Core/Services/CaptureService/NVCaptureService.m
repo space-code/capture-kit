@@ -7,6 +7,7 @@
 //
 
 #import "NVCaptureService.h"
+#import "NVDisplayBoundsProvider.h"
 
 @interface NVCaptureService ()
 
@@ -94,7 +95,8 @@
   CMTime minimumFrameDuration = CMTimeMake(1, (int32_t)_configuration.fps);
   [input setMinFrameDuration:minimumFrameDuration];
 
-  CGRect displayBounds = CGDisplayBounds(displayID);
+  CGRect displayBounds =
+      [[NVDisplayBoundsProvider sharedInstance] boundsForDisplayWithID:displayID];
 
   input.cropRect = CGRectMake(
       rect.origin.x - displayBounds.origin.x,
@@ -187,7 +189,7 @@
       didFinishRecordingToOutputFileAtURL:outputFileURL
                           fromConnections:connections
                                     error:error];
-  //  _fileOutput = nil;
+  _fileOutput = nil;
 }
 
 @end
