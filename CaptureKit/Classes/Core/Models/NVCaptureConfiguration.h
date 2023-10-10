@@ -15,8 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)init NS_UNAVAILABLE;
 
 - (nullable instancetype)initWithFPS:(NSUInteger)fps
-                     isCursorVisible:(BOOL)isCursorVisible
-                 isCaptureMouseClick:(BOOL)isCaptureMouseClick
+                      capturesCursor:(BOOL)capturesCursor
+                 capturesMouseClicks:(BOOL)capturesMouseClicks
                       captureQuality:(NVCaptureQuality)captureQuality;
 
 @property(nonatomic, readonly, assign) NSUInteger fps;

@@ -18,15 +18,15 @@
 }
 
 - (nullable instancetype)initWithFPS:(NSUInteger)fps
-                     isCursorVisible:(BOOL)isCursorVisible
-                 isCaptureMouseClick:(BOOL)isCaptureMouseClick
+                      capturesCursor:(BOOL)capturesCursor
+                 capturesMouseClicks:(BOOL)capturesMouseClicks
                       captureQuality:(NVCaptureQuality)captureQuality {
   self = [super init];
 
   if (self) {
     _fps = fps;
-    _capturesCursor = isCursorVisible;
-    _capturesMouseClicks = isCaptureMouseClick;
+    _capturesCursor = capturesCursor;
+    _capturesMouseClicks = capturesMouseClicks;
     _captureQuality = captureQuality;
   }
 
@@ -37,8 +37,8 @@
 
 + (NVCaptureConfiguration *)default {
   return [[NVCaptureConfiguration alloc] initWithFPS:60
-                                     isCursorVisible:YES
-                                 isCaptureMouseClick:NO
+                                      capturesCursor:YES
+                                 capturesMouseClicks:NO
                                       captureQuality:High];
 }
 
