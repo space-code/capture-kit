@@ -9,11 +9,13 @@
 #import "NVCaptureConfiguration.h"
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
 @implementation NVCaptureConfiguration
 
 #pragma mark - Initialization
+
+- (instancetype)init {
+  return nil;
+}
 
 - (nullable instancetype)initWithFPS:(NSUInteger)fps
                      isCursorVisible:(BOOL)isCursorVisible
@@ -40,6 +42,10 @@ NS_ASSUME_NONNULL_BEGIN
                                       captureQuality:High];
 }
 
-@end
+#pragma mark - NSCopying
 
-NS_ASSUME_NONNULL_END
+- (id)copyWithZone:(NSZone *)zone {
+  return self;
+}
+
+@end
