@@ -1,9 +1,6 @@
 //
-//  NVDisplayBoundsProvider.m
-//  CaptureKit
-//
-//  Created by Никита Васильев on 10.10.2023.
-//  Copyright © 2023 space-code. All rights reserved.
+// CaptureKit
+// Copyright © 2023 Space Code. All rights reserved.
 //
 
 #import "NVDisplayBoundsProvider.h"

@@ -1,8 +1,6 @@
 //
-//  CaptureKit.h
-//  CaptureKit
-//
-//  Created by Никита Васильев on 06.10.2023.
+// CaptureKit
+// Copyright © 2023 Space Code. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -16,6 +14,7 @@ FOUNDATION_EXPORT const unsigned char CaptureKitVersionString[];
 // In this header, you should import all the public headers of your framework using statements like
 // #import <CaptureKit/PublicHeader.h>
 
+#import <CaptureKit.h/NVMediaDeviceProvider.h>
 #import <CaptureKit/NVAudioService.h>
 #import <CaptureKit/NVCaptureConfiguration.h>
 #import <CaptureKit/NVCaptureQuality.h>
