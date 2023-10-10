@@ -9,9 +9,6 @@ hook:
 	ln -sf ../../hooks/pre-commit .git/hooks/pre-commit
 	chmod +x .git/hooks/pre-commit
 
-lint:
-	# mint run swiftlint
-
 fmt:
 	find CaptureKit -iname '*.h' -o -iname '*.m' | xargs clang-format -i
 	find CaptureKitTests -iname '*.h' -o -iname '*.m' | xargs clang-format -i
