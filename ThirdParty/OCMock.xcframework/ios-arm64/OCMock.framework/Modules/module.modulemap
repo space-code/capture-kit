@@ -1,7 +1,6 @@
 framework module OCMock {
-  umbrella header "OCMock.h" export *
+  umbrella header "OCMock.h"
+  export *
 
-      module * {
-    export *
-  }
+  module * { export * }
 }

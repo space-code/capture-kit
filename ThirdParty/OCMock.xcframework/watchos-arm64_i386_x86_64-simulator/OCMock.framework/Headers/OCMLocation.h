@@ -17,10 +17,11 @@
 #import <Foundation/Foundation.h>
 #import <OCMock/OCMFunctions.h>
 
-@interface OCMLocation : NSObject {
-  id testCase;
-  NSString *file;
-  NSUInteger line;
+@interface OCMLocation : NSObject
+{
+    id         testCase;
+    NSString  *file;
+    NSUInteger line;
 }
 
 + (instancetype)locationWithTestCase:(id)aTestCase file:(NSString *)aFile line:(NSUInteger)aLine;
