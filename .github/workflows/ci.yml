@@ -26,6 +26,7 @@ jobs:
           - destination: "platform=macOS"
             name: "macOS"
             scheme: "CaptureKit"
+            sdk: macosx
     steps:
       - name: Checkout
         uses: actions/checkout@v3
