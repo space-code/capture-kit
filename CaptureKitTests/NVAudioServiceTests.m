@@ -37,7 +37,7 @@ static NSString *const kDeviceID = @"device-id";
 
 - (void)testThatAudioServiceReturnsNilWhenAudioDeviceAreNil {
   // when
-  NSArray *IDs = [_audioService getAudioDevicesIDs:nil];
+  NSArray *IDs = [_audioService audioDevicesIDs];
 
   // then
   XCTAssertNil(IDs);
@@ -45,7 +45,7 @@ static NSString *const kDeviceID = @"device-id";
 
 - (void)testThatAudioServiceReturnsNilWhenAudioDeviceArrayIsEmpty {
   // when
-  NSArray *IDs = [_audioService getAudioDevicesIDs:[[NSArray alloc] init]];
+  NSArray *IDs = [_audioService audioDevicesIDs];
 
   // then
   XCTAssertNil(IDs);
@@ -57,9 +57,10 @@ static NSString *const kDeviceID = @"device-id";
   NSArray *array = [[NSMutableArray alloc] initWithObjects:device, nil];
 
   OCMStub([(AVCaptureDevice *)device uniqueID]).andReturn(kDeviceID);
+  OCMStub([self.mediaProvider devicesWithMediaType:[OCMArg any]]).andReturn(array);
 
   // when
-  NSArray *IDs = [_audioService getAudioDevicesIDs:array];
+  NSArray *IDs = [_audioService audioDevicesIDs];
 
   // then
   XCTAssertEqual([IDs count], 1);

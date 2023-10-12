@@ -12,12 +12,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NVMediaDeviceProvider : NSObject <NVIMediaProvider>
 
-/// Creates a new instance of `NVMediaDeviceProvider`.
-///
-/// @param device The AVCaptureDevice instances representing the available media device of the
-/// specified type.
-- (id)initWithCaptureDevice:(AVCaptureDevice *)device;
-
 /// Retrieves an array of media devices of the specified media type.
 ///
 /// @param type The media type for which you want to retrieve devices. Use constants like

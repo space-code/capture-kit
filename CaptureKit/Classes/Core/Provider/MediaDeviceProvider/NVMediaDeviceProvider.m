@@ -9,18 +9,9 @@
 
 @interface NVMediaDeviceProvider ()
 
-@property(nonatomic, strong) AVCaptureDevice *captureDevice;
-
 @end
 
 @implementation NVMediaDeviceProvider
-
-- (id)initWithCaptureDevice:(AVCaptureDevice *)device {
-  if (self = [super init]) {
-    self.captureDevice = device;
-  }
-  return self;
-}
 
 - (NSArray<AVCaptureDevice *> *)devicesWithMediaType:(AVMediaType)type {
   return [AVCaptureDevice devicesWithMediaType:type];

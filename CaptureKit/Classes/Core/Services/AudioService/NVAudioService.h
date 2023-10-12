@@ -20,11 +20,10 @@ NS_ASSUME_NONNULL_BEGIN
 /// @return An initialized NVAudioService instance.
 - (id)initWithMediaDeviceProvider:(id<NVIMediaProvider>)mediaDeviceProvider;
 
-/// Retrieves the unique identifiers of audio devices associated with the provided devices.
+/// Retrieves the unique identifiers of audio devices.
 ///
-/// @param devices An array of devices for which you want to retrieve audio device identifiers.
 /// @return An array of unique identifiers (NSString) of audio devices.
-- (NSArray *)getAudioDevicesIDs:(NSArray *)devices;
+- (NSArray<NSString *> *)audioDevicesIDs;
 
 /// Checks if an audio device with the specified unique identifier is currently connected.
 ///

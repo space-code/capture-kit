@@ -13,6 +13,8 @@
 
 @implementation NVAudioService
 
+#pragma mark - Initialization
+
 - (id)initWithMediaDeviceProvider:(id<NVIMediaProvider>)mediaDeviceProvider {
   if (self = [super init]) {
     self.mediaDeviceProvider = mediaDeviceProvider;
@@ -20,7 +22,25 @@
   return self;
 }
 
-- (NSArray *)getAudioDevicesIDs:(NSArray<AVCaptureDevice *> *)devices {
+#pragma mark - Public
+
+- (NSArray<NSString *> *)audioDevicesIDs {
+  NSArray<AVCaptureDevice *> *audioDevices =
+      [self.mediaDeviceProvider devicesWithMediaType:AVMediaTypeAudio];
+  return [self audioDevicesIDs:audioDevices];
+}
+
+- (BOOL)isAudioDeviceConnected:(NSString *)uniqueID {
+  NSArray<AVCaptureDevice *> *audioDevices =
+      [self.mediaDeviceProvider devicesWithMediaType:AVMediaTypeAudio];
+  NSArray *devicesIDs = [self audioDevicesIDs:audioDevices];
+
+  return [devicesIDs containsObject:uniqueID];
+}
+
+#pragma mark - Private
+
+- (NSArray<NSString *> *)audioDevicesIDs:(NSArray<AVCaptureDevice *> *)devices {
   if (devices == nil || devices.count == 0) {
     return nil;
   }
@@ -33,14 +53,6 @@
   }
 
   return devicesIDs;
-}
-
-- (BOOL)isAudioDeviceConnected:(NSString *)uniqueID {
-  NSArray<AVCaptureDevice *> *audioDevices =
-      [self.mediaDeviceProvider devicesWithMediaType:AVMediaTypeAudio];
-  NSArray *devicesIDs = [self getAudioDevicesIDs:audioDevices];
-
-  return [devicesIDs containsObject:uniqueID];
 }
 
 @end

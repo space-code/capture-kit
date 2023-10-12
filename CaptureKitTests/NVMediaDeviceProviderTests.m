@@ -23,7 +23,7 @@
 - (void)setUp {
   [super setUp];
   _captureDevice = OCMClassMock([AVCaptureDevice class]);
-  _deviceProvider = [[NVMediaDeviceProvider alloc] initWithCaptureDevice:_captureDevice];
+  _deviceProvider = [[NVMediaDeviceProvider alloc] init];
 }
 
 - (void)tearDown {
