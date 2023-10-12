@@ -1,10 +1,11 @@
-![capture-kit: ](https://raw.githubusercontent.com/space-code/capture-kit/dev/Resources/capture-kit.png)
+![capture-kit: a framework written in Objective-C that provides functions that can be used to capture the contents of a screen](https://raw.githubusercontent.com/space-code/capture-kit/dev/Resources/capture-kit.png)
 
 <h1 align="center" style="margin-top: 0px;">capture-kit</h1>
 
 <p align="center">
 <a href="https://github.com/space-code/validator/blob/main/LICENSE"><img alt="Liscence" src="https://img.shields.io/cocoapods/l/service-core.svg?style=flat"></a> 
 <a href="https://github.com/space-code/capture-kit"><img alt="CI" src="https://github.com/space-code/capture-kit/actions/workflows/ci.yml/badge.svg?branch=main"></a>
+<a href="https://codecov.io/gh/space-code/capture-kit"><img alt="CodeCov" src="https://codecov.io/github/space-code/capture-kit/graph/badge.svg?token=aRe5JBCNtX"></a>
 </p>
 
 ## Description
