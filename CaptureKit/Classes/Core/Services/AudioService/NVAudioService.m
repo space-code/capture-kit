@@ -25,17 +25,21 @@
 #pragma mark - Public
 
 - (NSArray<NSString *> *)audioDevicesIDs {
-  NSArray<AVCaptureDevice *> *audioDevices =
-      [self.mediaDeviceProvider devicesWithMediaType:AVMediaTypeAudio];
+  NSArray<AVCaptureDevice *> *audioDevices = [self audioDevices];
   return [self audioDevicesIDs:audioDevices];
 }
 
 - (BOOL)isAudioDeviceConnected:(NSString *)uniqueID {
-  NSArray<AVCaptureDevice *> *audioDevices =
-      [self.mediaDeviceProvider devicesWithMediaType:AVMediaTypeAudio];
+  NSArray<AVCaptureDevice *> *audioDevices = [self audioDevices];
   NSArray *devicesIDs = [self audioDevicesIDs:audioDevices];
 
   return [devicesIDs containsObject:uniqueID];
+}
+
+- (NSArray<AVCaptureDevice *> *)audioDevices {
+  NSArray<AVCaptureDevice *> *audioDevices =
+      [self.mediaDeviceProvider devicesWithMediaType:AVMediaTypeAudio];
+  return audioDevices;
 }
 
 #pragma mark - Private
