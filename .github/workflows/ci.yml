@@ -1,4 +1,4 @@
-name: "capture-kit"
+name: capture-kit
 
 on:
   push:
@@ -6,13 +6,10 @@ on:
       - main
       - dev
   pull_request:
+    paths:
       - ".github/workflows/**"
       - "CaptureKit/**"
       - "CaptureKitTests/**"
-
-concurrency:
-  group: ci
-  cancel-in-progress: true
 
 jobs:
   Latest:
