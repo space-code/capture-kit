@@ -1,0 +1,60 @@
+name: CaptureKit
+options:
+  developmentLanguage: en
+  createIntermediateGroups: true
+  deploymentTarget:
+    macOS: 11.0
+  xcodeVersion: 14.0
+settings:
+  base:
+    SWIFT_VERSION: "5.7"
+    PRODUCT_BUNDLE_IDENTIFIER: com.nikitavasilev.capture-kit
+    CODE_SIGN_STYLE: automatic
+    GENERATE_INFOPLIST_FILE: YES
+attributes:
+  ORGANIZATIONNAME: space-code
+schemes:
+  CaptureKit:
+      build:
+        targets:
+          CaptureKit: all
+      run:
+        config: Debug
+      test:
+        gatherCoverageData: true
+        targets:
+          - CaptureKitTests
+        coverageTargets:
+          - CaptureKit
+targets:
+  CaptureKit:
+    type: framework
+    platform: macOS
+    sources:
+      - path: CaptureKit
+    settings:
+      base:
+        MARKETING_VERSION: 1.0.0
+        CURRENT_PROJECT_VERSION: 1
+        CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER: NO
+  CaptureKitTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - CaptureKitTests
+    dependencies:
+      - target: CaptureKit
+      - framework: ThirdParty/OCMock.xcframework
+    settings:
+      base:
+        CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER: NO
+aggregateTargets:
+  OCLint:
+    buildScripts:
+      - script: |
+          cd ${SRCROOT}
+          xcodebuild clean
+          xcodebuild -project CaptureKit.xcodeproj COMPILER_INDEX_STORE_ENABLE=NO | xcpretty -r json-compilation-database --output compile_commands.json
+          oclint-json-compilation-database -e build -- -report-type xcode
+        name: OCLint 
+    

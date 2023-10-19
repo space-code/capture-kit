@@ -1,0 +1,7 @@
+disable-rules:
+  - AssignIvarOutsideAccessors
+  - LongVariableName
+rule-configurations:
+  - key: LONG_LINE
+    value: 200
+enable-clang-static-analyzer: true
