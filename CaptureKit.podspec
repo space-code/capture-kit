@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
     s.source = { :git => 'https://github.com/space-code/capture-kit.git', :tag => s.version }
     s.documentation_url = 'https://github.com/space-code/capture-kit'
 
-    s.osx.deployment_target = '10.12'
+    s.osx.deployment_target = '11.0'
 
     s.source_files = 'CaptureKit/CaptureKit.h'
 end
