@@ -10,7 +10,6 @@ on:
       - ".github/workflows/**"
       - "CaptureKit/**"
       - "CaptureKitTests/**"
-
 jobs:
   Latest:
     name: Test Latest (macOS)
