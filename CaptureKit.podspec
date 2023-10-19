@@ -10,5 +10,5 @@ Pod::Spec.new do |s|
 
     s.osx.deployment_target = '11.0'
 
-    s.source_files = 'CaptureKit/CaptureKit.h'
+    s.source_files = 'CaptureKit/**/*.{h,m}'
 end
