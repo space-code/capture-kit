@@ -1,6 +1,12 @@
 #Change Log
 All notable changes to this project will be documented in this file.
 
+## [Unreleased]
+
+## Added
+- Add CocoaPods badges to `README.md`
+  - Added in Pull Request [#4](https://github.com/space-code/capture-kit/pull/4).
+
 #### 1.x Releases
 - `1.0.x` Releases - [1.0.0](#100)
 

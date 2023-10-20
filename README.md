@@ -3,9 +3,11 @@
 <h1 align="center" style="margin-top: 0px;">capture-kit</h1>
 
 <p align="center">
-<a href="https://github.com/space-code/validator/blob/main/LICENSE"><img alt="Liscence" src="https://img.shields.io/cocoapods/l/service-core.svg?style=flat"></a> 
+<a href="https://cocoapods.org/pods/CaptureKit"><img alt="CodeCov" src="https://img.shields.io/cocoapods/v/CaptureKit.svg?style=flat"></a>
+<a href="https://cocoapods.org/pods/CaptureKit"><img alt="CodeCov" src="https://img.shields.io/cocoapods/l/CaptureKit.svg?style=flat"></a>
+<a href="https://cocoapods.org/pods/CaptureKit"><img alt="CodeCov" src="https://img.shields.io/cocoapods/p/CaptureKit.svg?style=flat"></a>
 <a href="https://github.com/space-code/capture-kit"><img alt="CI" src="https://github.com/space-code/capture-kit/actions/workflows/ci.yml/badge.svg?branch=main"></a>
-<a href="https://codecov.io/gh/space-code/capture-kit"><img alt="CodeCov" src="https://codecov.io/github/space-code/capture-kit/graph/badge.svg?token=aRe5JBCNtX"></a>
+<a href="https://codecov.io/gh/space-code/capture-kit"><img alt="CodeCov" src="https://codecov.io/github/space-code/capture-kit/graph/badge.svg?token=aRe5JBCNtX"></a> 
 </p>
 
 ## Description
